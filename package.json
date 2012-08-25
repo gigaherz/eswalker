@@ -1,26 +1,22 @@
 {
-  "name": "eswalker",
-  "description": "ECMAScript AST Walker",
-  "main": "walker.js",
-  "version": "0.1.0",
-  "engines": {
-    "node": ">=0.4.0"
-  },
-  "maintainers": [
-    {
-      "name": "David Quintana",
-      "email": "gigaherz@gmail.com"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/gigaherz/eswalker.git"
-  },
-  "licenses": [
-    {
-      "type": "BSD",
-      "url": "http://github.com/gigaherz/eswalker/raw/master/LICENSE.BSD"
-    }
-  ],
-  "dependencies": {}
+    "name": "eswalker",
+    "description": "ECMAScript AST Walker",
+    "main": "walker.js",
+    "version": "0.1.0",
+    "author": {
+        "name": "David Quintana",
+        "email": "gigaherz@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/gigaherz/eswalker.git"
+    },
+    "bugs": "https://github.com/gigaherz/eswalker/issues",
+    "licenses": [
+        {
+            "type": "BSD",
+            "url": "http://github.com/gigaherz/eswalker/raw/master/LICENSE.BSD"
+        }
+    ],
+    "dependencies": {}
 }
