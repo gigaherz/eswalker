@@ -206,9 +206,11 @@
                 }
 
                 for (i = 0; i < nodes.length; i++) {
-                    nodes[i] =
-                            this.walkElement(nodes[i], parent, fieldName, nodes,
-                                    i);
+                    if(typeof nodes[i] !== 'undefined') {
+                        nodes[i] =
+                                this.walkElement(nodes[i], parent, fieldName,
+                                        nodes, i);
+                    }
                 }
 
                 return (this.exitExpressions) ?
@@ -435,8 +437,8 @@
                                 arguments);
                     }
                     node.test = this.walkElement(node.test, node, 'test');
-                    node.consequent = this.walkElement(node.consequent);
-                    node.alternate = this.walkElement(node.alternate);
+                    node.consequent = this.walkElement(node.consequent, node, 'consequent');
+                    node.alternate = this.walkElement(node.alternate, node, 'alternate');
                     node = (this.exitConditionalExpression) ?
                             this.exitConditionalExpression.apply(this,
                                     arguments) : node;
@@ -501,10 +503,9 @@
                     }
                     if (node.update) {
                         node.update =
-                                this.walkElement(node.update, node,
-                                        'update');
+                                this.walkElement(node.update, node, 'update');
                     }
-                    node.body = this.walkElement(node.body);
+                    node.body = this.walkElement(node.body, node, 'body');
                     node = (this.exitForStatement) ?
                             this.exitForStatement.apply(this, arguments) :
                             node;
@@ -891,7 +892,7 @@
     }
 
     // Sync with package.json.
-    exports.version = '0.1.0';
+    exports.version = '0.1.1';
     exports.createWalker = createWalker;
 
     return exports;
