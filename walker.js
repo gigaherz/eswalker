@@ -891,8 +891,7 @@
     }
 
     // Sync with package.json.
-    exports.version = '0.0.0-dev';
-
+    exports.version = '0.1.0';
     exports.createWalker = createWalker;
 
     return exports;
