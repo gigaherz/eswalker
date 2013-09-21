@@ -685,9 +685,12 @@
                         this.enterReturnStatement.apply(this,
                                 arguments);
                     }
-                    node.argument =
-                            this.walkElement(node.argument, node,
-                                    'argument');
+                    if(node.argument){
+                        node.argument =
+                                this.walkElement(node.argument, node,
+                                        'argument');                        
+                    }
+
                     node = (this.exitReturnStatement) ?
                             this.exitReturnStatement.apply(this,
                                     arguments) :
